@@ -1,3 +1,6 @@
+import sys
+sys.stdin = open("input.txt", "r")
+
 N = [list(map(int, input().split())) for _ in range(10)]
 
 arr = []
@@ -27,5 +30,5 @@ def maze(x, y):
 maze(1, 1)
 for i in range(10):
     for j in range(10):
-        print(arr[i][j], end=" ")
+        print(N[i][j], end=" ")
     print()
