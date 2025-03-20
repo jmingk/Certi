@@ -1,6 +1,6 @@
 # https://codeup.kr/problem.php?id=6082
 
-N = 20 #int(input())
+N = 33 #int(input())
 
 for n in range(N):
     print(n, end=' ')

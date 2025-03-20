@@ -1,10 +1,13 @@
 import sys
+import copy
 sys.stdin = open("input.txt", "r")
 
 N = [list(map(int, input().split())) for _ in range(10)]
 
 arr = []
 visit = [[0]*10]*10
+
+arr = copy.deepcopy(N)
 for n in range(10):
     arr.append(N[n])
 
