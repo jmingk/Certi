@@ -49,10 +49,10 @@ def move(a, b, d, count):
 
         if visit[nx][ny] == 0 and game_map[nx][ny] == 0:
             visit[nx][ny] = 1
-return move(nx, ny, d, count + 1)
+            return move(nx, ny, d, count + 1)
 
     # All directions are either visited or sea
-nx = a - dx[d]
+    nx = a - dx[d]
     ny = b - dy[d]
     if game_map[nx][ny] == 0:
         return move(nx, ny, d, count)
