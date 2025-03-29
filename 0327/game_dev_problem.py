@@ -33,12 +33,12 @@ visit[a][b] = 1
 def turn_left(d):
     if d == 0:
         return 3
-elif d == 1:
-        return 0
-elif d == 2:
-        return 1
-elif d == 3:
-        return 2
+    elif d == 1:
+            return 0
+    elif d == 2:
+            return 1
+    elif d == 3:
+            return 2
 
 count = 1
 def move(a, b, d, count):
@@ -49,10 +49,10 @@ def move(a, b, d, count):
 
         if visit[nx][ny] == 0 and game_map[nx][ny] == 0:
             visit[nx][ny] = 1
-return move(nx, ny, d, count + 1)
+            return move(nx, ny, d, count + 1)
 
     # All directions are either visited or sea
-nx = a - dx[d]
+    nx = a - dx[d]
     ny = b - dy[d]
     if game_map[nx][ny] == 0:
         return move(nx, ny, d, count)

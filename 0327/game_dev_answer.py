@@ -1,3 +1,7 @@
+import sys
+
+sys.stdin = open("dev_game_input.txt", "r")
+
 n, m=map(int,input().split())
 x,y,d=map(int, input().split())
 
