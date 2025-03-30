@@ -1,3 +1,6 @@
+import sys
+sys.stdin = open("input.txt", "r")
+
 from collections import deque
 
 def dfs(node):
@@ -14,10 +17,8 @@ def dfs(node):
 
 def bfs(start):
     q = deque([start])
-
     while q:
-        node = q.pop()
-        visited.add(node)
+        node = q.popleft()
         print(node, end=' ')
         if node not in graph.keys():
             continue
@@ -25,12 +26,12 @@ def bfs(start):
             if nnode in visited:
                 continue
             else:
-                q.append(node)
-
+                visited.add(nnode)
+                q.append(nnode)
     return
 
 
-N, M, V = list(map(int, input().split(' ')))
+N, M, V = map(int, input().split(' '))
 
 graph = {}
 for i in range(M):
@@ -39,6 +40,13 @@ for i in range(M):
         graph[src] = [dest]
     else:
         graph[src].append(dest)
+    if dest not in graph.keys():
+        graph[dest] = [src]
+    else:
+        graph[dest].append(src)
+
+for key in graph.keys():
+    graph[key].sort()
 
 # DFS
 visited = set()
@@ -46,10 +54,6 @@ dfs(V)
 print()
 
 # BFS
-visited = set()
+visited = set([V])
 bfs(V)
 print()
-
-
-
-print(graph)
