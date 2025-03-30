@@ -5,12 +5,12 @@ sys.stdin = open("/workspaces/Certi/0330/2667_input.txt", "r")
 from collections import deque
 
 def bfs(graph, startx, starty, n):
+    graph[startx][starty] = 0
+    count = 1
     dx = [-1, 1, 0, 0]
     dy = [0, 0, -1, 1]
-    count = 1
-    q = deque([[startx,starty]])
-    graph[startx][starty] = 0
 
+    q = deque([[startx,starty]])
     while q:
         x, y = q.popleft()
         for i in range(4):
