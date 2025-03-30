@@ -1,6 +1,6 @@
 def fibo(n):
     # DP table에 있는 값이면 -> 이미 계산한 값 사용
-    if n in DP_table.keys():
+    if n in DP_table:
         return DP_table[n]
     # DP table에 없는 값이면 -> 처음 계산
     else:

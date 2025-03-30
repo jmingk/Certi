@@ -1,3 +1,6 @@
+import sys
+sys.stdin = open("0330/2667_input.txt", "r")
+
 def dfs(graph, x, y, n):
     graph[x][y] = 0
     count = 1  # 현재 단지 크기

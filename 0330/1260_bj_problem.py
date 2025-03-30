@@ -11,7 +11,8 @@ def dfs(graph, node, visited):
 
 def bfs(graph, start, visited):
     queue = deque([start])
-    visited.append(start)
+    # visited 표시를 두번 해준다.
+    # visited.append(start)
     while queue:
         current = queue.popleft()
         print(current, end=' ')
@@ -24,6 +25,7 @@ def bfs(graph, start, visited):
 n, m, start = map(int, input().split())
 
 graph = {}
+# 만약 모든 노드에 대해 list를 만들고 시작하면 map 안써도 된다.
 for i in range(1, n + 1):
     graph[i] = []
 
@@ -40,4 +42,5 @@ visited_bfs = []
 
 dfs(graph, start, visited_dfs)
 print()
+visited_bfs.append(start)
 bfs(graph, start, visited_bfs)
