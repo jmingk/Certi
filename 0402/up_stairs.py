@@ -1,6 +1,6 @@
-import sys
-sys.stdin = open("up_stairs_input.txt", "r")
+import heapq
 
+hq = heapq()
 N = int(input())
 stairs = []
 for _ in range(N):
