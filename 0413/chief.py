@@ -1,6 +1,6 @@
 from itertools import permutations
 import sys
-sys.stdin = open("chief_input.txt", "r")
+sys.stdin = open("0413/chief_input.txt", "r")
 
 def dfs(idx, selected, n, item):
     if len(selected) == n // 2:

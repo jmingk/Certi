@@ -1,3 +1,4 @@
+# https://school.programmers.co.kr/learn/courses/30/lessons/87946
 def dfs(k, dungeons, visited, count, max_dungeons):
     max_dungeons[0] = max(max_dungeons[0], count)
 
