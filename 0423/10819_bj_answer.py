@@ -15,25 +15,35 @@ def comb(ns, visited = [], series = [], total = 0):
     global N, max_total
     if len(series) == N:
         # print(series)
-        cur_total = get_abs_result(series)
-        if cur_total > max_total:
-            max_total = cur_total
+        # cur_total = get_abs_result(series)
+        if total > max_total:
+            max_total = total
         return
     for i in range(N):
         if visited[i]:
             continue
+        
         series.append(ns[i])
         visited[i] = True
-        comb(ns, visited, series)
+        
+        abs_result = 0
+        if len(series) > 1:
+            abs_result = abs(series[-1] - series[-2])
+        
+        total += abs_result
+
+        comb(ns, visited, series, total)
+        
         series.pop()
         visited[i] = False
+        total -= abs_result
     return
 
 N = int(input())
 ns = list(map(int, input().split(' ')))
 visited = [False] * N
 series = []
-comb(ns, visited, series)
+comb(ns, visited, series, 0)
 print(max_total)
 
 
