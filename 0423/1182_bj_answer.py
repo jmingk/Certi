@@ -23,8 +23,9 @@ def dfs(i=0, cur_sum = 0):
     dfs(i + 1, cur_sum)
     dfs(i + 1, cur_sum + ns[i])
 
+dfs(0, 0)
+
 if target == 0:
     cnt -= 1
 
-dfs(0, 0)
 print(cnt)
