@@ -64,7 +64,7 @@ max_value = 0
 def dfs(index, a_list, b_list):
     global max_value
 
-    if index == N-1:
+    if index == N:
         if a_list and b_list:
             a_total = sum(a_list)
             b_total = sum(b_list)
