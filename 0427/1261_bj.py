@@ -3,7 +3,8 @@ from collections import deque
 M, N = map(int, input().split())
 maze = [list(map(int, input().strip())) for _ in range(N)]
 
-visited = [[0] * M for _ in range(N)]
+dist = [[-1] * m for _ in range(n)]
+# visited = [[0] * M for _ in range(N)]
 
 dx = [1, -1, 0, 0]
 dy = [0, 0, 1, -1]
@@ -25,8 +26,9 @@ def bfs():
             if 0 <= nx < N and 0 <= ny < M:
                 new_broken = broken + maze[nx][ny]
 
-                if visited[nx][ny] == 0 or new_broken < visited[nx][ny]:
-                    visited[nx][ny] = new_broken
+                # if visited[nx][ny] == 0 or 
+                if new_broken < visited[nx][ny]:
+                    visited[nx][ny] = 1
                     if maze[nx][ny] == 0:
                         q.appendleft((nx, ny, new_broken))
                     else:
