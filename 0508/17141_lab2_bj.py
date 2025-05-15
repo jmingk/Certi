@@ -23,7 +23,7 @@ def bfs(lab, virus_positions, N):
 
         for i in range(4):
             nr, nc = r + dx[i], c + dy[i]
-            if 0 <= nr < N and 0 <= nc < N and lab[nr][nc] == 0 and visited[nr][nc] == -1:
+            if 0 <= nr < N and 0 <= nc < N and lab[nr][nc] != 1 and visited[nr][nc] == -1:
                 visited[nr][nc] = current_time + 1
                 queue.append((nr, nc))
                 max_time = max(max_time, current_time + 1)

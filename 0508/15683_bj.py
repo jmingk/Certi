@@ -51,7 +51,6 @@ def dfs(depth, temp_map):
 
         dfs(depth + 1, new_map)
 
-
 grid_rows, grid_cols = map(int, input().split())
 office_map = []
 

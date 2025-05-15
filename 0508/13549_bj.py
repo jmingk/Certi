@@ -1,6 +1,5 @@
 from collections import deque
 
-
 def find_min_time():
     queue = deque()
     queue.append(start_pos)
@@ -8,7 +7,6 @@ def find_min_time():
 
     while queue:
         current_pos = queue.popleft()
-
         next_positions = [current_pos * 2, current_pos - 1, current_pos + 1]
 
         for next_pos in next_positions:
